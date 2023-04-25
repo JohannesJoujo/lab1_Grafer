@@ -1,7 +1,7 @@
 #include "reader.h"
 int main() {
     auto a= parse_file("edges.txt");
-    std::cout << "Size of graph: " << a.first.size() << " nodes, " << a.second.size() << " edges" << std::endl;
+    //std::cout << "Size of graph: " << a.first.size() << " nodes, " << a.second.size() << " edges" << std::endl;
     std::vector<node_id_t>count;
     //print_graph(a);
     //complete_DFS();
@@ -9,9 +9,9 @@ int main() {
 
     auto edges=connnected_nodes(a);
     //BFS(1);
-
+/*
     for(int i=0;i<a.first.size();i++){
-        auto c=DFS(i);
+        auto c=BFS(i);
         for (const auto& edge : c) {
             std::cout<<edge.n1<<", ";
         }
@@ -28,9 +28,18 @@ int main() {
     for (const auto& edge : count) {
         std::cout<<edge<<" ";
     }
-
-
-
+*/
+/*
+auto hej =has_edge(23,a);
+for(auto shoo:hej){
+    std::cout<<shoo.first<<" "<<shoo.second <<" \n";
+}*/
+ auto hej2=DIKSTRAS(5,19);
+    for (const auto& edge : hej2) {
+        if(edge.weight!=999999) {
+            std::cout << "Edge: " << edge.n1 << " " << " weight: " << edge.weight << "\n";
+        }
+    }
     //std::cout<<complete_DFS()<<", ";
 /*
     std::cout<<"\n---------------------------"<<std::endl;
