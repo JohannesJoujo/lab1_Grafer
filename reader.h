@@ -24,19 +24,16 @@ struct node{
     node_id_t n1=0;
     node_id_t prev=0;
     double weight=0;
-    bool visited= false;
 };
 
 using edge_list_t = std::vector<edge>;
 
 using adjacency_list_t = std::pair<meta_t,edge_list_t>;
-void print_graph(const adjacency_list_t& graph);
+
 adjacency_list_t parse_file(std::string filename);
 std::vector<std::pair<std::pair<node_id_t, node_id_t>,double>> connnected_nodes(const adjacency_list_t& graph);
 std::vector<std::pair<node_id_t,double>> has_edge(node_id_t n1, const adjacency_list_t& graph);
-//bool DFS(node_id_t n1);
 std::vector<node> DFS(node_id_t start);
 std::vector<node> BFS(node_id_t start);
 std::vector<node> DIKSTRAS(node_id_t start,node_id_t end);
-bool complete_DFS();
 #endif //LAB1_GRAFER_READER_H
